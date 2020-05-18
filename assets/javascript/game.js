@@ -1,8 +1,3 @@
-console.log
-
-let incrementButton = document.querySelector("#increment");
-let decrementButton = document.querySelector("#decrement");
-let counter = document.querySelector("#counter");
 
 let resetButton = document.querySelector("#reset-button");
 let resetCounter = document.querySelector("#num-resets");
@@ -12,55 +7,50 @@ resetButton.addEventListener("click", function () {
 
   console.log("+ reset-button clicked");
   let newCounterValue = Number(resetCounter.innerHTML) + 1;
-
   resetCounter.innerHTML = newCounterValue;
+
+
+  numshotsT1Counter.innerHTML = 0;
+  numgoalT1Counter.innerHTML = 0;
+
+  numshotsT2Counter.innerHTML = 0;
+  numgoalT2Counter.innerHTML = 0;
 })
 
-//Team 1//
+//Team 1 shot counter//
 let teamOneshoot = document.querySelector("#teamone-shoot-button");
 let numshotsT1Counter = document.querySelector("#teamone-numshots");
+let numgoalT1Counter = document.querySelector("#teamone-numgoals");
 
 teamOneshoot.addEventListener("click", function () {
 
   console.log("+ teamone-shoot-button clicked");
-  let newCounterValue = Number(numshotsT1Counter.innerHTML) + 1;
+  let newShotsCounterValue = Number(numshotsT1Counter.innerHTML) + 1;
+  numshotsT1Counter.innerHTML = newShotsCounterValue;
 
-  numshotsT1Counter.innerHTML = newCounterValue;
+  if (Math.random() * 100 < 80) {
+    console.log("teamone-goal");
+
+    let newGoalCounterValue = Number(numgoalT1Counter.innerHTML) + 1;
+    numgoalT1Counter.innerHTML = newGoalCounterValue;
+  }
 })
 
-//Team 2//
+//Team 2 shot counter//
 let teamTwoshoot = document.querySelector("#teamtwo-shoot-button");
 let numshotsT2Counter = document.querySelector("#teamtwo-numshots");
+let numgoalT2Counter = document.querySelector("#teamtwo-numgoals");
 
 teamTwoshoot.addEventListener("click", function () {
 
   console.log("+ teamtwo-shoot-button clicked");
-  let newCounterValue = Number(numshotsT1Counter.innerHTML) + 1;
+  let newShotsCounterValue = Number(numshotsT2Counter.innerHTML) + 1;
+  numshotsT2Counter.innerHTML = newShotsCounterValue;
 
-  numshotsT2Counter.innerHTML = newCounterValue;
+  if (Math.random() * 100 < 20) {
+    console.log("teamtwo-goal");
+
+    let newGoalCounterValue = Number(numgoalT2Counter.innerHTML) + 1;
+    numgoalT2Counter.innerHTML = newGoalCounterValue;
+  }
 })
-
-//Team 1 goal counter//
-let teamOnegoal = document.querySelector("#teamone-goal-button");
-let numgoalT1Counter = document.querySelector("#teamone-numgoals");
-
-teamOnegoal.addEventListener("click", function () {
-
-  console.log("+ teamone-goal-button clicked");
-  let newCounterValue = Number(numgoalT1Counter.innerHTML) + 3;
-
-  numgoalT1Counter.innerHTML = newCounterValue;
-})
-
-//Team 2 goal counter/
-let teamTwogoal = document.querySelector("#teamtwo-goal-button");
-let numgoalT2Counter = document.querySelector("#teamtwo-numgoals");
-
-teamTwogoal.addEventListener("click", function () {
-
-  console.log("+ teamtwo-goal-button clicked");
-  let newCounterValue = Number(numgoalT2Counter.innerHTML) + 3;
-
-  numgoalT2Counter.innerHTML = newCounterValue;
-})
-
